@@ -25,9 +25,11 @@ greet(...personTwo);
 
 var names = ["Mike", "Ben"];
 var final = ["Sasha", ...names];
-// for (i = 0; final.length < 3; i ++) {
-// 	console.log("Hi " + i);
-// }
+
 final.forEach(function (name) {
 	console.log("Hi " + name);
 });
+
+// for (i = 0; i < final.length; i ++) {
+// 	console.log("Hi " + final[i]);
+// }
