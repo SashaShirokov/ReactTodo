@@ -18,16 +18,6 @@ var TodoApp = React.createClass({
 	componentDidUpdate: function() {
 		TodoAPI.setTodos(this.state.todos);
 	},
-	handleToggle: function(id) {
-		var updatedTodos = this.state.todos.map((todo) => {
-			if (todo.id === id) {
-				todo.completed = !todo.completed;
-				todo.completedAt = todo.completed ? moment().unix() : undefined;
-			}
-			return todo;
-		});
-		this.setState({todos: updatedTodos});
-	},
 	handleAddTodo: function(text) {
 		this.setState({
 			todos: [
@@ -41,6 +31,16 @@ var TodoApp = React.createClass({
 				}
 			]
 		});
+	},
+	handleToggle: function(id) {
+		var updatedTodos = this.state.todos.map((todo) => {
+			if (todo.id === id) {
+				todo.completed = !todo.completed;
+				todo.completedAt = todo.completed ? moment().unix() : undefined;
+			}
+			return todo;
+		});
+		this.setState({todos: updatedTodos});
 	},
 	handleSearch: function(showCompleted, searchText) {
 		this.setState({
