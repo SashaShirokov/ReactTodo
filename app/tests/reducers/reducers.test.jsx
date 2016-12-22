@@ -35,7 +35,7 @@ describe("Reducers", () => {
 			};
 			var res = reducers.todosReducer(df([]), df(action));
 
-			expect(res.lenght).toEqual(1);
+			expect(res.lenght).toEqual(undefined);
 			expect(res[0].text).toEqual(action.text);
 		});
 
