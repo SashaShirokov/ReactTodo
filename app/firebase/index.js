@@ -2,11 +2,10 @@ import firebase from "firebase";
 
 try {
 	var config = {
-		apiKey: "AIzaSyAuVntKHiWyDOSuPdxd546nMFFEURrI2X8",
-		authDomain: "shirokov-todo-app.firebaseapp.com",
-		databaseURL: "https://shirokov-todo-app.firebaseio.com",
-		storageBucket: "shirokov-todo-app.appspot.com",
-		messagingSenderId: "55371203600"
+		apiKey: process.env.API_KEY,
+		authDomain: process.env.AUTH_DOMAIN,
+		databaseURL: process.env.DATABASE_URL,
+		storageBucket: process.env.STORAGE_BUCKET
 	};
 
 	firebase.initializeApp(config);
